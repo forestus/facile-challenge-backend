@@ -1,5 +1,7 @@
 # Facile
 
+Esta aplicação recebe um campo "name" no corpo de uma requisição em "/encryptions" e devolve o mesmo criptografado e também busca passando o id como params no formato uuid em "/encryptions/:id".
+
 ## Acesse https://facilechallenge.herokuapp.com/
 
 ## Requisitos
