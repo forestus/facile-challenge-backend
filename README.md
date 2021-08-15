@@ -32,7 +32,7 @@ password: </br>
 database: </br>
 host: </br>
 
-### OBS.: OS CAMPOS ACIMA DEVEM ESTAR IGUAIS QUANTO AO VALUE.
+#### OBS.: OS CAMPOS ACIMA DEVEM ESTAR IGUAIS QUANTO AO VALUE.
 </br>
 
  - Para configurar a aplicação é necessário informar uma senha secreta em HASH também juntamente ao arquivo .env anterior e juntamente o NODE_ENV=development para que a configuração junto ao docker funcione corretamente.
