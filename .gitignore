@@ -1,6 +1,5 @@
 node_modules
 .vscode
 .idea
-.env
 .ormconfig.json
 .ormconfig.js
