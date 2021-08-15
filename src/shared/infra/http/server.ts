@@ -8,7 +8,6 @@ import dotenv from "dotenv";
 import express, { Application, Request, Response } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-/* eslint-disable import/no-extraneous-dependencies */
 import swaggerJsDoc, { Options } from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
 import { Connection } from "typeorm";
