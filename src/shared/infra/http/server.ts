@@ -22,6 +22,7 @@ dotenv.config();
 // Configuração do Swagger
 if (process.env.PORT) {
   swaggerConfig.swaggerDefinition.servers[0].url = `http://localhost:${process.env.PORT}`;
+  swaggerConfig.apis[0] = "../docs/Encrypt/*.yml";
 }
 const swaggerOptions: Options = swaggerConfig;
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
