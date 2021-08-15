@@ -24,6 +24,11 @@ if (process.env.PORT) {
   swaggerConfig.swaggerDefinition.servers[0].url = `http://localhost:${process.env.PORT}`;
   swaggerConfig.apis[0] = "../docs/Encrypt/*.yml";
 }
+if (process.env.NODE_ENV === "production") {
+  swaggerConfig.swaggerDefinition.servers[0].url =
+    "https://facilechallenge.herokuapp.com/";
+  swaggerConfig.apis[0] = "../docs/Encrypt/*.yml";
+}
 const swaggerOptions: Options = swaggerConfig;
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
