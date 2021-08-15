@@ -47,8 +47,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  error:
+                  code:
+                    type: string
+                    description: Tipo de Erro.
+                    example: E_NOT_FOUND
+                  message:
                     type: array
                     items:
                       type: string
-                    example: ['Nenhum Texto Criptografado Encontrado!']
+                    example:
+                      [
+                        'Nenhum Texto Criptografado Encontrado!'
+                      ]
