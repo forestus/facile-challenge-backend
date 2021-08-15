@@ -11,8 +11,8 @@ export default async (): Promise<Connection> => {
         port: process.env.DATABASE_PORT,
         password: process.env.DATABASE_PASSWORD,
         database: process.env.DATABASE_NAME,
-        entities: [`./src/modules/**/infra/typeorm/entities/*.js`],
-        migrations: [`./src/shared/infra/typeorm/migrations/*.js`],
+        // entities: [`./src/modules/**/infra/typeorm/entities/*.js`],
+        // migrations: [`./src/shared/infra/typeorm/migrations/*.js`],
       })
     );
   }
