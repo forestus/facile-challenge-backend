@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "cd ./dist && npm i --production && pm2-runtime start pm2config.json --env production",
+    "start": "pm2-runtime start pm2config.json --env production",
     "copy:unix": "cp package.json dist/ && cp ormconfig.json dist/ && cp pm2config.json dist/ && cp .env dist/ && cp swaggerConfig.json dist/",
     "copy:win": "copy \"package.json\" \"dist\" && copy \"ormconfig.json\" \"dist\" && copy \"pm2config.json\" \"dist\" && copy \".env\" \"dist\" && copy \"swaggerConfig.json\" \"dist\"",
-    "build": "babel src --extensions \".js,.ts\" -d dist/src --copy-files --no-copy-ignored && npm run copy:unix",
+    "build": "babel src --extensions \".js,.ts\" -d dist/src --copy-files --no-copy-ignored && npm run copy:unix && cd ./dist && npm i --production",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn --poll --interval 1000 src/shared/infra/http/index.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
     "migration:run": "npm run typeorm migration:run",
