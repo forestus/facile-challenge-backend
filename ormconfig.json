@@ -1,20 +1,21 @@
 {
   "type": "postgres",
   "port": 5432,
-  "host": "localhost",
+  "host": "postgres",
   "keepConnectionAlive": true,
   "synchronize": true,
   "logging": false,
-  "username": "postgres",
-  "password": "postgres",
+  "username": "admin",
+  "password": "123456",
   "database": "facile",
   "migrations": [
-  "./src/shared/infra/typeorm/migrations/*.ts"
+  "./src/shared/infra/typeorm/migrations/*.{js,ts}"
 ],
   "entities": [
-  "./src/modules/**/entities/*.ts"
+  "./src/modules/**/infra/typeORM/entities/*.{js,ts}"
 ],
   "cli": {
-  "migrationsDir": "./src/shared/infra/typeorm/migrations"
+  "migrationsDir": "./src/shared/infra/typeorm/migrations",
+  "entitiesDir": "./src/modules/encrypt/infra/typeORM/entities"
 }
 }

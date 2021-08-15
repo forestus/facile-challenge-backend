@@ -5,3 +5,4 @@ node_modules
 .ormconfig.json
 .ormconfig.js
 dist
+dbdata
