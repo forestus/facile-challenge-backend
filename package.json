@@ -7,7 +7,7 @@
     "start": "cd ./dist && npm i --production && pm2-runtime start pm2config.json --env production",
     "start:docker": "cd ./dist && npm i --production && pm2-runtime start pm2ConfigSingleInstance.json --env production",
     "start:dev": "ts-node-dev --transpile-only --poll --ignore-watch node_modules -r tsconfig-paths/register src/shared/infra/http/index.ts",
-    "copy:prod": "cp package.json dist/ && cp ormconfig.json dist/ && cp pm2config.json dist/ && cp swaggerConfig.json dist/ && cp pm2ConfigSingleInstance.json dist/ && cp .env dist/",
+    "copy:prod": "cp package.json dist/ && cp ormconfig.json dist/ && cp pm2config.json dist/ && cp swaggerConfig.json dist/ && cp pm2ConfigSingleInstance.json dist/",
     "copy:unix": "cp package.json dist/ && cp ormconfig.json dist/ && cp pm2config.json dist/ && cp swaggerConfig.json dist/ && cp pm2ConfigSingleInstance.json dist/ && cp .env dist/",
     "copy:win": "copy \"package.json\" \"dist\" && copy \"ormconfig.json\" \"dist\" && copy \"pm2config.json\" \"dist\" && copy \"swaggerConfig.json\" \"dist\" && copy \"pm2ConfigSingleInstance.json\" \"dist\" && copy \".env\" \"dist\"",
     "build": "babel src --extensions \".js,.ts\" -d dist/src --copy-files --no-copy-ignored && npm run copy:prod",
