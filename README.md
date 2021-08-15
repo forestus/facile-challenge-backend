@@ -6,7 +6,7 @@
 
 ## Usabilidade
 
-- git clone https://github.com/forestus/facilechallenge
+- git clone https://github.com/forestus/facile-challenge-backend
 - code facilechallenge
 - é necessário que voce configure as variaveis de ambiente neste estágio, segue abaixo uma descrição para configuração.
 - docker-compose up (verifique se nao tem nenhum container com node ou postgres rodando antes)
