@@ -1,0 +1,54 @@
+paths:
+  /encryptions/{id}:
+    get:
+      tags:
+        - 'Encrypt'
+      summary: Encontrar Texto Criptografado por ID.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID do Texto Criptografado.
+      responses:
+        200:
+          description: Postagem.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Texto Descriptografado.
+                    example: Hello World!
+        400:
+          description: Erro de Validação.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    description: Tipo de Erro.
+                    example: E_VALIDATION_FAILURE
+                  message:
+                    type: array
+                    items:
+                      type: string
+                      description: Texto Descriptografado.
+                      example: 'O campo \"id\" precisa ser do tipo \"uuid\"!'
+        404:
+          description: Não Encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: array
+                    items:
+                      type: string
+                    example: ['Nenhum Texto Criptografado Encontrado!']

@@ -1,0 +1,53 @@
+paths:
+  /encryptions:
+    post:
+      tags:
+        - 'Encrypt'
+      summary: Criar Texto Criptografado.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Texto a ser Criptografado.
+                  example: Hello Wolrd!
+      responses:
+        201:
+          description: Retorna um Texto Criptografado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: ID do Texto.
+                    example: "a04e3b89-6623-4c72-8fd4-ceb3d9bdce31"
+                  name:
+                    type: string
+                    description: Texto a ser Criptografado.
+                    example: "477fe5802627498f2275216cb9d10bae57f1cc50b6c2d2ab2db3747c1faefbd8100ca6204b8168283e68fdd2a9820180db9fe13395ccbb42c838955d6edaa3dca91f081a3fe8f232effbc0d41a5bc03822a8e068b04f8bf5f1e517320a09588434d0dfdee78f9cdb4147f329"
+        400:
+          description: Erro de Validação.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    description: Tipo de Erro.
+                    example: E_VALIDATION_FAILURE
+                  message:
+                    type: array
+                    items:
+                      type: string
+                    example:
+                      [
+                        'O Campo \"name\" é Obrigatório!',
+                        'O campo "name" precisa ser do tipo "string"!'
+                      ]
