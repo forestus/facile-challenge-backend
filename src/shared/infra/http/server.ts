@@ -23,23 +23,20 @@ dotenv.config();
 if (process.env.PORT) {
   swaggerConfig.swaggerDefinition.servers[0].url = `http://localhost:${process.env.PORT}`;
 }
+const swaggerOptions: Options = swaggerConfig;
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 async function connectToDB(): Promise<Connection> {
-  // inicia a Conexão com o Banco e quando termina Inicia a Configuração do Servidor.
   const connection = await createConnection();
   return connection;
 }
 
 function server(): Application {
   const app: Application = express();
-  if (process.env.NODE_ENV !== "production") {
-    const swaggerOptions: Options = swaggerConfig;
-    const swaggerDocs = swaggerJsDoc(swaggerOptions);
-    app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
-    app.get("/", (request: Request, response: Response) => {
-      response.redirect("/api-docs");
-    });
-  }
+  app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+  app.get("/", (request: Request, response: Response) => {
+    response.redirect("/api-docs");
+  });
   app.use(express.json());
   app.use(cors());
   app.use(helmet());
