@@ -4,7 +4,7 @@ services:
   app:
     build: .
     restart: always
-    entrypoint: dockerize -wait tcp://postgres:5432 -timeout 40s ./.docker/entrypoint.sh
+    entrypoint: dockerize -wait tcp://postgres:5432 -timeout 40s ./.docker/entrypoint-dev.sh
     container_name: node
     ports:
       - 3000:3000
