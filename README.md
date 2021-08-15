@@ -1,12 +1,14 @@
 # Facile
 
+## Acesse https://facilechallenge.herokuapp.com/
+
 ## Requisitos
  - Docker 20.10.7 
  - VSCODE
 
 ## Usabilidade
 
-- git clone https://github.com/forestus/facilechallenge
+- git clone https://github.com/forestus/facile-challenge-backend
 - code facilechallenge
 - é necessário que voce configure as variaveis de ambiente neste estágio, segue abaixo uma descrição para configuração.
 - docker-compose up (verifique se nao tem nenhum container com node ou postgres rodando antes)
@@ -30,7 +32,7 @@ password: </br>
 database: </br>
 host: </br>
 
-### OBS.: OS CAMPOS ACIMA DEVEM ESTAR IGUAIS QUANTO AO VALUE.
+#### OBS.: OS CAMPOS ACIMA DEVEM ESTAR IGUAIS QUANTO AO VALUE.
 </br>
 
  - Para configurar a aplicação é necessário informar uma senha secreta em HASH também juntamente ao arquivo .env anterior e juntamente o NODE_ENV=development para que a configuração junto ao docker funcione corretamente.
